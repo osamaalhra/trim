@@ -1,0 +1,9 @@
+{
+	"servers": {
+		"my-mcp-server-abf8c71d": {
+			"url": "chatgpt.com",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}
