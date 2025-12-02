@@ -1,0 +1,724 @@
+/* تنسيقات صفحات المصادقة */
+:root {
+    --primary-color: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary-color: #7209b7;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --danger-color: #ff595e;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --gray-color: #6c757d;
+    
+    --gradient-primary: linear-gradient(135deg, #4361ee, #3a56d4);
+    --gradient-dark: linear-gradient(135deg, #212529, #343a40);
+}
+
+body.auth-page {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, var(--dark-color) 0%, #2d3748 100%);
+    min-height: 100vh;
+    color: var(--light-color);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* خلفية متحركة */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 20s infinite linear;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    right: -150px;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    left: -100px;
+    animation-delay: 5s;
+    background: rgba(67, 97, 238, 0.1);
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    right: 20%;
+    animation-delay: 10s;
+    background: rgba(76, 201, 240, 0.1);
+}
+
+.shape-4 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 15s;
+    background: rgba(247, 37, 133, 0.1);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(50px, 50px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0, 100px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-50px, 50px) rotate(270deg);
+    }
+}
+
+/* الشريط العلوي */
+.navbar {
+    background: rgba(33, 37, 41, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+}
+
+.navbar-brand .logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.navbar-text a {
+    transition: all 0.3s ease;
+}
+
+.navbar-text a:hover {
+    color: white !important;
+    text-decoration: underline;
+}
+
+/* الحاوية الرئيسية */
+.auth-container {
+    padding-top: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-form-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    color: var(--dark-color);
+}
+
+.auth-side {
+    background: var(--gradient-dark);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* الشعار */
+.auth-logo {
+    text-align: center;
+}
+
+.logo-icon-large {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.auth-logo h2 {
+    font-weight: 800;
+    margin-top: 1rem;
+}
+
+/* العناوين */
+.auth-title {
+    font-weight: 800;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+    color: var(--gray-color);
+    margin-bottom: 2rem;
+}
+
+/* المدخلات */
+.form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.input-group {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.input-group-text {
+    background: var(--light-color);
+    border: 1px solid #dee2e6;
+    border-right: none;
+    color: var(--gray-color);
+}
+
+.form-control {
+    border: 1px solid #dee2e6;
+    border-right: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+/* الأزرار */
+.btn {
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* الروابط */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* الفواصل */
+.separator {
+    position: relative;
+    text-align: center;
+}
+
+.separator span {
+    background: white;
+    padding: 0 1rem;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+.separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #dee2e6;
+    z-index: -1;
+}
+
+/* ميزات الجانب */
+.auth-features {
+    margin-top: 3rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.feature-text h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.feature-text p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+}
+
+/* شهادات العملاء */
+.auth-testimonial {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.testimonial-author strong {
+    color: white;
+    font-weight: 600;
+}
+
+.testimonial-author span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* خطوات التسجيل */
+.registration-steps {
+    padding: 2rem 0;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.steps::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #dee2e6;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #dee2e6;
+    color: var(--gray-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-circle {
+    background: var(--gradient-primary);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+}
+
+.step.completed .step-circle {
+    background: var(--success-color);
+    color: white;
+}
+
+.step-label {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    text-align: center;
+    max-width: 100px;
+}
+
+.step.active .step-label {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* محتوى الخطوات */
+.step-content {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* قوة كلمة المرور */
+.password-strength {
+    margin-top: 0.5rem;
+}
+
+.password-strength .progress {
+    border-radius: 3px;
+}
+
+.password-strength .progress-bar {
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* الوسوم */
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.selected-tags .badge {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.selected-tags .badge i {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.selected-tags .badge i:hover {
+    opacity: 1;
+}
+
+/* تأكيد المعلومات */
+.confirmation-details {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.confirmation-details .row > div {
+    margin-bottom: 0.75rem;
+}
+
+.confirmation-details strong {
+    color: var(--dark-color);
+    margin-left: 0.5rem;
+}
+
+.confirmation-details span {
+    color: var(--gray-color);
+}
+
+/* قائمة المزايا */
+.benefits-list {
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.benefit-text h6 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.benefit-text p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+}
+
+/* شريط شهادات العملاء */
+.testimonials-slider {
+    position: relative;
+    margin-top: 2rem;
+    min-height: 120px;
+}
+
+.testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* استعادة كلمة المرور */
+.password-reset-icon {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.password-steps {
+    margin-bottom: 2rem;
+}
+
+.password-steps .steps::before {
+    left: 15%;
+    right: 15%;
+}
+
+/* حقول التحقق */
+.verification-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.verification-digit {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.verification-digit:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+    outline: none;
+}
+
+/* العد التنازلي */
+#countdownText {
+    font-size: 0.9rem;
+}
+
+#countdown {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* تذييل الصفحة */
+.auth-footer {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+}
+
+/* تعديلات للهواتف */
+@media (max-width: 768px) {
+    .auth-form-wrapper {
+        padding: 2rem;
+    }
+    
+    .auth-side {
+        padding: 2rem;
+    }
+    
+    .steps::before {
+        left: 5%;
+        right: 5%;
+    }
+    
+    .step-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .step-label {
+        font-size: 0.8rem;
+        max-width: 80px;
+    }
+    
+    .verification-digit {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .auth-title {
+        font-size: 1.5rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .verification-digit {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+/* تأثيرات خاصة */
+.form-control:invalid {
+    border-color: var(--danger-color);
+}
+
+.form-control:valid {
+    border-color: var(--success-color);
+}
+
+.invalid-feedback {
+    display: none;
+    animation: shake 0.5s ease;
+}
+
+.invalid-feedback.d-block {
+    display: block;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* تأثيرات التحميل */
+.spinner-border {
+    vertical-align: middle;
+}
+
+/* النماذج المعطلة */
+.form-control:disabled,
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* تخصيص التمرير */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
